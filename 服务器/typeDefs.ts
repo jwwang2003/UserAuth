@@ -1,16 +1,16 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
-  type Query {
-    getUser: [User]
-  }
-
   type User {
     id: ID,
     firstName: String,
     lastName: String,
     email: String,
     password: String
+  }
+
+  type Query {
+    getUser(email: String!): User
   }
 
   type Mutation {

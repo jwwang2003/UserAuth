@@ -7,9 +7,13 @@ interface AgeMap {
   password: String
 }
 
+interface int1 {
+  email: String,
+}
+
 export const resolvers = {
   Query: {
-    getUser: () => User.find({})
+    getUser: async (_:String, { email }:int1) => await User.findOne({email: email})
   },
   Mutation: {
     createUser: async (_:String, { firstName , lastName, email, password }:AgeMap) => {
