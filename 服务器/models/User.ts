@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     required: true,
     max: 255
   },
-  password: {
+  passwordHash: {
     type: String,
     required: true,
     max: 1024
@@ -25,4 +25,11 @@ const UserSchema = new mongoose.Schema({
   timestamps: {createdAt: "created_at", updatedAt: "updated_at"}
 })
 
-export = mongoose.model('User', UserSchema);
+interface IUser extends mongoose.Document {
+  firstName: string,
+  lastName: string,
+  email: string,
+  passwordHash: string
+}
+
+export = mongoose.model<IUser>('User', UserSchema);

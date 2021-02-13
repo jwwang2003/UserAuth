@@ -4,14 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve --config ./webpack.config.js --mode development --port 3000",
     "dev:server": "nodemon --watch '服务器/**/*.ts' --ignore 'server/**/*.spec.ts' --exec 'ts-node' 服务器/index.ts"
   },
   "author": "Jun Wei Wang",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@types/react-router-dom": "^5.1.7",
+    "brotli-webpack-plugin": "^1.1.0",
+    "css-loader": "^5.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.1.0",
     "nodemon": "^2.0.7",
-    "ts-loader": "^8.0.17"
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.17",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "@babel/core": "^7.12.16",
@@ -21,12 +35,17 @@
     "@babel/register": "^7.12.13",
     "@types/node": "^14.14.27",
     "apollo-server-express": "^2.21.0",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "ignore-styles": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.16",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
   }
